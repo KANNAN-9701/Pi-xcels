@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Movies from "./components/Movies";
+import MovieDetails from "./components/MovieDetails";
 
 function App() {
-  const [movies, setMovies] = useState([]);
-  useEffect(() => {
-    async function getData() {
-      const response = await fetch('/api/movies');
-      const payload = await response.json();
-      setMovies(payload.data);
-    }
-    getData();
-  }, []);
   return (
     <div className="App">
       <Router>
